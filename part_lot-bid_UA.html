@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bid</title>
+        <link media="all" rel="stylesheet" href="css/bootstrap.css">
+        <link media="all" rel="stylesheet" href="css/bootstrap-select.css">
+        <link media="all" rel="stylesheet" href="css/timeTo.css">
+        <link media="all" rel="stylesheet" href="css/jquery-ui.min.css">
+        <link media="all" rel="stylesheet" href="css/jquery-ui.structure.min.css">
+        <link media="all" rel="stylesheet" href="css/jquery-ui.theme.min.css">
+        <link media="all" rel="stylesheet" href="css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header id="header">
+                <a href="#" id="logo">
+                    <span>eAuction</span>
+                </a>
+                <div class="name-block">
+                    <div class="square"></div>
+                    <div class="wrap">
+                        <a href="#" class="name">Іван Іванов</a>
+                        <div class="foto-holder"></div>
+                    </div>
+                </div>
+            </header>
+            <div id="container" class="clearfix">
+                <div id="nav-bar" class="part_nav-bar">
+                    <ul>
+                        <li><a href="#">Глобальний список лотів</a></li>
+                        <li><a href="#" class="active">Мої активні лоти</a></li>
+                        <li><a href="#">Історія лотів</a></li>
+                    </ul>
+                </div>
+                <main id="part_lot-bid" class="main">
+                   <div class="title-line">Аукціон</div>
+                   <div class="auction-container">
+                       <div class="start-price">
+                           <strong>Стартова ціна лота</strong>
+                           <div class="price">грн. 400</div>
+                       </div>
+                       <div class="timer">
+                           <strong>Залишок часу</strong>
+                           <div id="countdown-1"></div>
+                           <a href="#" class="leave-auction">Залишити аукціон</a>
+                       </div>
+                       <div class="bid-block">
+                            <form action="#" onkeypress="if(event.keyCode == 13) return false;">
+                                <div class="bit-step">
+                                    <strong>Крок ставки</strong>
+                                    <input type="number" id="bitStep" max="120" required><i> грн.</i>
+                                    <div class="min-max">
+                                        <i>Мін:</i><span class="min">40 (10%) грн.</span>
+                                        <i>Макс:</i><span>120 (30%) грн.</span>
+                                    </div>
+                                    <!-- <div class="slider-holder">
+                                        <label for="amount">
+                                            <input type="text" id="amount">
+                                        </label>
+                                        <div id="slider"></div>
+                                    </div> -->
+                                </div>
+                                <div class="prices-box">
+                                    <div class="highest-bid item">
+                                        <strong>Найвища ставка</strong>
+                                        <div class="price">грн. 600</div>
+                                    </div>
+                                    <div class="last-bid item">
+                                        <strong>Моя остання ставка</strong>
+                                        <div class="price">грн. 540</div>
+                                    </div>
+                                    <div class="bid-placed item">
+                                        <strong>Cтавка, яка буде розміщена</strong>
+                                        <div class="price">грн. 540</div>
+                                    </div>
+                                    <input type="submit" class="send-btn item" value="Поставити">
+                                </div>
+                            </form>
+                            <div class="bid-history">
+                                <strong>Історія торгів</strong>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Ставка</th>
+                                            <th>Час</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1209834</td>
+                                            <td>600 грн.</td>
+                                            <td>1 хв. назад</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1209834</td>
+                                            <td>500 грн.</td>
+                                            <td>1 год. назад</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1209834</td>
+                                            <td>400 грн.</td>
+                                            <td>1 год. назад</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1209834</td>
+                                            <td>700 грн.</td>
+                                            <td>1 год. назад</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1209834</td>
+                                            <td>600 грн.</td>
+                                            <td>1 год. назад</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="view-all">
+                                    <a href="#">Подивитись все</a>
+                                </div>
+                            </div>
+                       </div>
+                   </div>
+                   <div class="content-description">
+                        <div class="map-brief-holder clearfix">
+                            <div class="map-box">Карта</div>
+                            <div class="brief-description">
+                                <h2>&laquo;Українська виробничо-наукова лабораторія імуногенетики&raquo;</h2>
+                                <p>Ідентифікаційний код 12345678<br>, 07400, Київська обл., м. Київ, вул. Грушевського, 100.<br> Відокремлені підрозділі та предствавництва відсутні.</p>
+                            </div>
+                        </div>
+                        <div class="description-info">
+                            <div class="tabs-btn">
+                                <button type="button" class="descript-btn active">Описання</button>
+                                <button type="button" class="specif-btn">Специфікація</button>
+                            </div>
+                            <div class="text-block description-text active">
+                                <h2>&laquo;Українська виробничо-наукова лабораторія імуногенетики&raquo;</h2>
+                                <p>Ідентифікаційний код 12345678<br>, 07400, Київська обл., м. Київ, вул. Грушевського, 100.<br> Відокремлені підрозділі та предствавництва відсутні.</p>
+                                <p>Lorem Ipsum - це текст-"риба", що використовується в друкарстві та дизайні. Lorem Ipsum є, фактично, стандартною "рибою" аж з XVI сторіччя, коли невідомий друкар взяв шрифтову гранку та склав на ній підбірку зразків шрифтів. "Риба" не тільки успішно пережила п'ять століть, але й прижилася в електронному верстуванні, залишаючись по суті незмінною. Вона популяризувалась в 60-их роках минулого сторіччя завдяки виданню зразків шрифтів Letraset, які містили уривки з Lorem Ipsum, і вдруге - нещодавно завдяки програмам комп'ютерного верстування на кшталт Aldus Pagemaker, які використовували різні версії Lorem Ipsum.</p>
+                            </div>
+                            <div class="text-block specification-text">
+                                <p>Lorem Ipsum - це текст-"риба", що використовується в друкарстві та дизайні. Lorem Ipsum є, фактично, стандартною "рибою" аж з XVI сторіччя, коли невідомий друкар взяв шрифтову гранку та склав на ній підбірку зразків шрифтів. "Риба" не тільки успішно пережила п'ять століть, але й прижилася в електронному верстуванні, залишаючись по суті незмінною. Вона популяризувалась в 60-их роках минулого сторіччя завдяки виданню зразків шрифтів Letraset, які містили уривки з Lorem Ipsum, і вдруге - нещодавно завдяки програмам комп'ютерного верстування на кшталт Aldus Pagemaker, які використовували різні версії Lorem Ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="js/jquery-2.2.2.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-select.min.js"></script>
+        <script src="js/jquery.time-to.min.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            //Timer
+            $(document).ready(function() {
+                $('#countdown-1').timeTo(7200, function(){ alert('Countdown finished'); });
+            });
+
+            //Price slider
+            // $(function() {
+            //     $( "#slider" ).slider({
+            //         value:100,
+            //         min: 0,
+            //         max: 500,
+            //         step: 1,
+            //         slide: function( event, ui ) {
+            //             $( "#amount" ).val(ui.value);
+            //         }
+            //     });
+            //     $( "#amount" ).val($( "#slider" ).slider( "value" ));
+            // });
+            
+        </script>
+    </body>
+</html>

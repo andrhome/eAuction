@@ -1,0 +1,36 @@
+figure, figcaption {
+	display: block;
+}
+
+.timeTo span {
+	vertical-align: top;
+}
+
+.timeTo figure {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+.timeTo figcaption {
+	text-align: center;
+	line-height: 80%;
+	font-weight: normal;
+	color: #888;
+}
+
+.timeTo div {
+	position: relative;
+	display: inline-block;
+	width: 15px;
+	height: 17px;
+	overflow: hidden;
+    vertical-align: middle;
+}
+
+.timeTo ul {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 0 !important;
+    top: -28px !important;
+}

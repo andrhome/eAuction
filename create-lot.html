@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create lot</title>
+        <link media="all" rel="stylesheet" href="css/bootstrap.css">
+        <link media="all" rel="stylesheet" href="css/bootstrap-select.css">
+        <link media="all" rel="stylesheet" href="css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header id="header">
+                <a href="#" id="logo">
+                    <span>eAuction</span>
+                </a>
+                <div class="name-block">
+                    <div class="square"></div>
+                    <div class="wrap">
+                        <a href="#" class="name">Ivan Petrov</a>
+                        <div class="foto-holder"></div>
+                    </div>
+                </div>
+            </header>
+            <div id="container" class="clearfix">
+                <div id="nav-bar">
+                    <a href="#" class="create-new-lot">Create new lot <i>+</i></a>
+                    <ul>
+                        <li><a href="#">My active lots</a></li>
+                        <li><a href="#">My finished lots</a></li>
+                        <li><a href="#">Global lot list</a></li>
+                    </ul>
+                </div>
+                <main id="create-lot" class="main">
+                    <div class="title-line">New Lot</div>
+                    <form action="#" class="create-form">
+                        <div class="column upload-doc">
+                            <div class="input-box">
+                                <input type="file">
+                                <p>Upload documents</p>
+                            </div>
+                        </div>
+                        <div class="column set-fields">
+                            <h3>Lot characteristics</h3>
+                            <label>
+                                <span>The name of the organizer of land auctions</span>
+                                <input type="text" required>
+                            </label>
+                            <label>
+                                <span>Lot Name</span>
+                                <input type="text" required>
+                            </label>
+                            <label>
+                                <span>Cadastral number of</span>
+                                <input type="text" required>
+                            </label>
+                            <label>
+                                <span>Area</span>
+                                <input type="text" required>
+                            </label>
+                            <label>
+                                <span>Designated purpose of land plot</span>
+                                <textarea></textarea>
+                            </label>
+                            <label>
+                                <span>Location of the land plot</span>
+                                <textarea></textarea>
+                            </label>
+                            <label>
+                                <span>Urban conditions and limitations of  land plot constuction</span>
+                                <textarea></textarea>
+                            </label>
+
+                            <label class="rent">
+                                <span>Lot Name</span>
+                                <input type="text" required>
+                            </label>
+                            <label class="rent">
+                                <span>Cadastral number of the land plot</span>
+                                <input type="text" required>
+                            </label>
+                            <label class="rent">
+                                <span>Area</span>
+                                <input type="text" required>
+                            </label>
+                            <label class="rent">
+                                <span>Designated purpose of land plot</span>
+                                <textarea></textarea>
+                            </label>
+                            <label class="rent">
+                                <span>Location of the land plot</span>
+                                <textarea></textarea>
+                            </label>
+                            <label class="rent">
+                                <span>Kinds of land plot use</span>
+                                <textarea></textarea>
+                            </label>
+                            <label class="rent">
+                                <span>Urban conditions and limitations of  land plot constuction</span>
+                                <textarea></textarea>
+                            </label>
+                        </div>
+                        <div class="column set-fields contract-terms">
+                            <h3>Contract terms</h3>
+                            <div class="select-holder">
+                                <span>Type of contract term</span>
+                                <select class="selectpicker contract-terms-select">
+                                    <option value="0">Purchase and sale</option>
+                                    <option value="1">Rent</option>
+                                    <option value="1">sf</option> 
+                                    <option value="1">em</option>
+                                </select>
+                            </div>
+                            <label>
+                                <span>Expert monetary valuation of land plot</span>
+                                <input type="text" required>
+                            </label>
+                            <label>
+                                <span>Starting price</span>
+                                <input type="text" required>
+                            </label>
+                            <label>
+                                <span>Bid step</span>
+                                <input type="text" required>
+                            </label>
+                            <label>
+                                <span>Conditions of sale the land plot</span>
+                                <input type="text" required>
+                            </label>
+                            <label class="rent">
+                                <span>The term of use a land  plot and other terms of use</span>
+                                <input type="text" required>
+                            </label>
+                            <label class="rent">
+                                <span>Normative monetary valuation of land plot</span>
+                                <input type="text" required>
+                            </label>
+                            <label class="rent">
+                                <span>The starting amount of annual fee for use of land plot</span>
+                                <input type="text" required>
+                            </label>
+                            <label class="rent">
+                                <span>Bid step</span>
+                                <input type="text" required>
+                            </label>
+                            <label class="rent">
+                                <span>Amount of funds for the preparation of the lot, which the winner must pay to the performer of land sales</span>
+                                <input type="text" required>
+                            </label>
+                            <input type="submit" value="Create lot" class="create-btn">
+                        </div>
+                    </form>
+                </main>
+            </div>
+        </div>
+        <script src="js/jquery-2.2.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-select.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

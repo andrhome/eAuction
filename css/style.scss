@@ -1,0 +1,1058 @@
+@import 'reset.css';
+//-----------Variables--------------
+$fontFamily: 'Roboto', sans-serif;
+$textColor: #9e9e9e;
+$headerColor: #eeeded;
+$headerColorLight: lighten($headerColor, 3%);
+$logoBg: #d8d8d8;
+$hoverColor: #bdbdbd;
+
+//-----------Inheritance--------------
+.inputText{
+	width: 100%;
+	height: 32px;
+	color: #ccc;
+	background: #fff;
+	border-radius: 0;
+	border: 0;
+	margin-bottom: 18px;
+}
+.inputSubmit{
+	width: 100%;
+	height: 40px;
+	font-size: 16px;
+	color: #999999;
+	border-radius: 0;
+	border: 0;
+	background: #fff;
+	margin-bottom: 18px;
+	&:hover{
+		background: $hoverColor;
+		color: #fff;
+	}
+}
+.a-hover{
+	text-decoration: none;
+	background: $hoverColor;
+	color: #fff;
+}
+.selectFilter{
+	width: 100%;
+	height: 31px;
+	font-size: 12px;
+	color: $textColor;
+	background: $headerColorLight;
+	padding-left: 10px;
+	padding-right: 30px;
+	border: 0;
+	border-radius: 0;
+	.caret{
+		width: 30px;
+		height: 100%;
+		background: $logoBg;
+		border: 0;
+		top: 2px;
+    	right: 0;
+	}
+}
+.inputFilter{
+	width: 100%;
+	height: 31px;
+	font-size: 12px;
+	background: $headerColorLight;
+	border: 0;
+	padding-left: 10px;
+	margin-bottom: 10px;
+}
+.flexRow{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.flexColumn{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+body{
+	font-size: 14px;
+	line-height: normal;
+	color: $textColor;
+	font-family: $fontFamily;
+}
+html, body {
+  height: 100%;
+}
+#wrapper {
+    height: 100%;
+    min-height: 100%;
+}
+a{
+	color: $textColor;
+	&:hover{
+		text-decoration: none;
+		color: darken($textColor, 5%);
+	}
+}
+a:active, a:focus{
+	text-decoration: none;
+}
+// **********************************Style for checkbox*****************************
+input[type=checkbox]{
+        opacity: 0;
+        position: absolute;
+        z-index: 12;
+        width: 18px;
+        height: 18px;
+}
+input[type=checkbox]:checked,
+input[type=checkbox]:focus{
+        outline: none !important;
+}
+input[type=checkbox]+.lbl{
+        position: relative;
+        z-index: 11;
+        display: inline-block;
+        margin: 0;
+        line-height: 20px;
+        min-height: 14px;
+        min-width: 14px;
+        font-weight: normal;
+}
+input[type=checkbox]+.lbl.padding-16::before{
+        margin-right: 16px;
+}
+input[type=checkbox]+.lbl.padding-12::before {
+        margin-right: 12px;
+}
+input[type=checkbox]+.lbl.padding-8::before{
+        margin-right: 5px;
+}
+input[type=checkbox]+.lbl.padding-4::before{
+        margin-right: 4px;
+}
+input[type=checkbox]+.lbl.padding-0::before{
+        margin-right: 0px;
+}
+input[type=checkbox]+.lbl::before{
+        font-family: fontAwesome;
+        font-weight: normal;
+        font-size: 11px;
+        color: #333;
+        content: "\a0";
+        background-color: #FAFAFA;
+        border: 1px solid #CCC;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        border-radius: 0;
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        height: 14px;
+        line-height: 14px;
+        min-width: 14px;
+        margin-right: 1px;
+        margin-top: -3px;
+}
+input[type=checkbox]:checked+.lbl::before{
+        display: inline-block;
+        content: '\f00c';
+        background-color: #F5F8FC;
+        border-color: #adb8c0;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+}
+input[type=checkbox]:active+.lbl::before,
+input[type=checkbox]:checked:active+.lbl::before {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+input[type=checkbox]:disabled+.lbl::before,
+input[type=checkbox][disabled]+.lbl::before,
+input[type=checkbox].disabled+.lbl::before {
+        background-color: #DDD !important;
+        border-color: #CCC !important;
+        box-shadow: none !important;
+        color: #BBB;
+}
+
+//=============================================================================================================
+//                                                    HEADER
+//=============================================================================================================
+#header{
+	max-width: 1920px;
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+	background-color: $headerColor;
+	margin: 0 auto;
+	padding: 0 40px;
+
+	#logo{
+		width: 151px;
+		display: inline-block;
+		text-align: center;
+		background-color: $logoBg;
+		padding: 20.5px 0;
+		&:hover{
+			background: $hoverColor;
+			color: #fff;
+		}
+
+		span{
+			display: inline-block;
+			font-size: 16px;
+			color: #f8f8f8;
+		}
+	}
+	.sign-in-title{
+		display: inline-block;
+		font-size: 16px;
+		margin-right: 75px;
+	}
+	.name-block{
+		width: 250px;
+		display: flex;
+	    flex-direction: row;
+	    align-items: center;
+	    justify-content: space-between;
+	
+		.wrap{
+			display: flex;
+			flex-direction: row;
+	    	align-items: center;
+
+			.name{
+				font-size: 16px;
+				margin-right: 10px;
+		    }
+		    .foto-holder{
+		    	width: 50px;
+		    	height: 50px;
+		    	display: inline-block;
+		    	border-radius: 50%;
+		    	background: #fff;
+		    }
+		}
+	    .square{
+	    	display: inline-block;
+	    	width: 30px;
+	    	height: 30px;
+	    	background: #fff;
+	    }
+	}
+}
+
+//=============================================================================================================
+//                                                    MAIN
+//=============================================================================================================
+#main-sign{
+	max-width: 1920px;
+	margin: 0 auto;
+	padding: 0 110px;
+
+	.sign-in-block-holder{
+		text-align: right;
+		margin-bottom: 5%;
+
+		.sign-in-block{
+			width: 270px;
+			display: inline-block;
+			text-align: center;
+			background-color: $headerColor;
+			padding: 20px 20px 30px 20px;
+
+			form{
+
+				input[type="text"]{
+					@extend .inputText;
+				}
+				input[type="password"]{
+					@extend .inputText;
+				}
+				input[type="submit"]{
+					@extend .inputSubmit;
+				}
+			}
+			span{
+				display: inline-block;
+				font-size: 12px;
+				color: #bbb;
+				margin-right: 5px;
+			}
+			.click-here{
+				display: inline-block;
+				font-size: 12px;
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	.sign-up-block-holder{
+		text-align: center;
+		margin-bottom: 12%;
+
+		.sign-up-block{
+			width: 330px;
+			display: inline-block;
+			text-align: center;
+			background-color: $headerColor;
+			padding: 20px 20px 30px 20px;
+
+			form{
+
+				input[type="text"]{
+					@extend .inputText;
+				}
+				input[type="email"]{
+					@extend .inputText;
+				}
+				input[type="password"]{
+					@extend .inputText;
+				}
+				input[type="submit"]{
+					@extend .inputSubmit;
+				}
+			}
+			span{
+				display: inline-block;
+				font-size: 12px;
+				color: #bbb;
+				margin-right: 5px;
+			}
+			.click-here{
+				display: inline-block;
+				font-size: 12px;
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+#nav-bar{
+	width: 300px;
+	float: left;
+	padding-top: 10px;
+	@media screen and (max-width: 1435px){
+		width: 210px; 
+	}
+
+	.create-new-lot{
+		display: inline-block;
+		text-align: center;
+		width: 100%;
+		font-size: 18px;
+		background: $headerColorLight;
+		padding: 19px 0;
+		margin-bottom: 10px;
+		&:hover{
+			@extend .a-hover;
+		}
+		@media screen and (max-width: 1035px){
+			padding: 13px 0;
+		}
+
+		i{
+			display: inline-block;
+			font-weight: 700;
+			font-family: Arial, sans-serif;
+			font-size: 30px;
+			vertical-align: middle;
+			line-height: 20px;
+			margin-left: 10px;
+		}
+	}	
+	ul{
+		line-height: 0;
+		font-size: 0;
+		background: $headerColorLight;
+		padding-bottom: 80%;
+
+		li{
+			border-bottom: 1px solid $logoBg;
+
+			a{
+				display: inline-block;
+				width: 100%;
+				font-size: 16px;
+				line-height: normal;
+				padding: 20px 0 20px 20px;
+				&:hover{
+					@extend .a-hover;
+				}
+				@media screen and (max-width: 1035px){
+					padding: 13px 0 13px 15px; 
+				}
+			}
+			a.active{
+				@extend .a-hover;
+			}
+		}
+	}
+}
+.main{
+	margin-left: 300px;
+	padding: 0 15px;
+	@media screen and (max-width: 1430px){
+		margin-left: 210px; 
+	}
+}
+#filters-holder{
+	max-width: 1110px;
+	margin: 0 auto;
+	padding: 50px 0 55px 0;
+	@media screen and (max-width: 1430px){
+		padding: 30px 0 30px 2%; 
+	}
+
+	form{
+		width: 100%;
+		@media screen and (max-width: 1430px){
+			text-align: justify;
+			&:after{
+				content: '';
+				width: 100%;
+				display: inline-block;
+			}
+		}
+
+		.check-box-block{
+			width: 130px;
+			display: inline-block;
+			color: lighten($textColor, 25%);
+			vertical-align: top;
+			margin-right: 20px;
+
+			label{
+				width: 100%;
+				display: inline-block;
+				margin-top: 0;
+				margin-bottom: 0;
+				&:first-child{
+					margin-bottom: 15px;
+				}
+
+				.lbl{
+					&:before{
+						width: 31px;
+						height: 31px;
+						background: $headerColorLight;
+						border: 0;
+						font-size: 23px;
+    					line-height: 32px;
+    					color: darken($headerColorLight, 40%); 
+					}
+				}
+			}
+			label.active{
+				color: $textColor;
+			}
+		}
+		.check-box-block.view{
+			width: 165px;
+		}
+		.item-filter{
+			width: 176px;
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 20px;
+			@media screen and (max-width: 1430px){
+				width: 160px;
+				margin: 0 5px; 
+			}
+
+			.bootstrap-select{
+				width: 100%;
+
+				.dropdown-toggle{
+					@extend .selectFilter;
+				}
+			}
+		}
+		.filter1{
+			input{
+				@extend .inputFilter;
+			}
+			.bootstrap-select{
+				width: 100%;
+
+				.dropdown-toggle{
+					@extend .selectFilter;
+				}
+			}
+		}
+		.item-filter .bootstrap-select:nth-child(2){
+			margin-bottom: 10px;
+		}
+		.button-holder{
+			display: inline-block;
+			vertical-align: bottom;
+			margin-left: 47px;
+			@media screen and (max-width: 1430px){
+				width: 100%;
+				text-align: right;
+				margin: 20px 0 0;
+				padding-right: 5px;
+			}
+
+			input[type="submit"]{
+				text-align: center;
+				width: 116px;
+				height: 31px;
+				border: 0;
+				background: $headerColorLight;
+				&:hover{
+					@extend .a-hover;
+				}
+			}
+		}
+	}
+}
+.lots-list-holder{
+	padding: 0 15px;
+	
+	#lots-list{
+		max-width: 1425px;
+		margin: 0 auto;
+		line-height: 0;
+		font-size: 0;
+		text-align: justify;
+		&:after{
+			content: '';
+			width: 100%;
+			display: inline-block;
+		}
+
+		.lot{
+			width: 21%;
+			min-width: 200px;
+			display: inline-block;
+			background: $headerColorLight;
+			overflow: hidden;
+			margin: 0 5px 5% 5px;
+			@media screen and (max-width: 1035px){
+				min-width: 160px; 
+			}
+
+			a{
+				width: 100%;
+				height: 300px;
+				font-weight: 700;
+				font-size: 14px;
+				line-height: normal;
+				display: inline-block;
+				vertical-align: top;
+				font-weight: 400;
+			    padding: 20px;
+				&:hover{
+					@extend .a-hover;
+					background: $logoBg;
+				}
+				@media screen and (max-width: 1650px){
+					height: 260px;
+				}
+				@media screen and (max-width: 1300px){
+					height: 215px;
+				}
+				@media screen and (max-width: 1035px){
+					height: 160px;
+				}
+				h2{
+					font-size: 20px;
+					text-align: center;
+					font-weight: 700;
+					margin-bottom: 20px;
+					@media screen and (max-width: 1035px){
+						font-size: 16px;
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+#main-active-map{
+	.map-holder{
+		max-width: 1420px;
+		height: 730px;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 24px;
+		font-weight: 700;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background: $headerColorLight;
+		padding: 15px;
+		margin-bottom: 5%;
+	}
+}
+#create-lot{
+	padding: 0 68px;
+	@media screen and (max-width: 1035px){
+		padding: 0 20px;
+	}
+	.create-form{
+		max-width: 1010px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding-left: 5%;
+		@media screen and (max-width: 1035px){
+			padding-left: 0;
+		}
+
+		.column{
+			width: 250px;
+			margin-right: 10px;
+
+			label.rent{
+				display: none;
+			}
+		}
+		.upload-doc{
+			padding-top: 30px;
+
+			.input-box{
+				width: 100%;
+				height: 66px;
+				border: 0;
+				text-align: center;
+				background: $headerColorLight;
+				font-size: 20px;
+				position: relative;
+				cursor: pointer;
+				&:hover{
+					@extend .a-hover;
+				}
+
+				input{
+					opacity: 0;
+					width: 100%;
+					height: 100%;
+					cursor: pointer;
+				}
+				p{
+					position: absolute;
+					top: 30%;
+					height: 0;
+					left: 0;
+					right: 0;
+					margin: 0 auto;
+					cursor: pointer;
+				}
+			}
+		}
+		.set-fields{
+			h3{
+				text-align: center;
+				font-size: 20px;
+				font-weight: 700;
+				margin-bottom: 15px;
+			}
+			label{
+				width: 100%;
+				margin-bottom: 20px;
+				
+				> span{
+					display: inline-block;
+					margin-bottom: 10px;
+				}
+				input{
+					@extend .inputFilter;
+					margin-bottom: 0;
+				}
+				textarea{
+					@extend .inputFilter;
+					height: 66px;
+					margin-bottom: 0;
+				}
+			}
+		}
+		.contract-terms{
+
+			.select-holder{
+				margin-bottom: 30px;
+
+				> span{
+					display: inline-block;
+					margin-bottom: 10px;
+				}
+				.bootstrap-select{
+					width: 100%;
+
+					.dropdown-toggle{
+						@extend .selectFilter;
+					}
+				}
+			}
+			.create-btn{
+				font-size: 20px;
+				height: 66px;
+				text-align: center;
+				border: 0;
+				width: 100%;
+				background: $headerColorLight;
+				&:hover{
+					@extend .a-hover;
+				}
+			}
+		}
+	}
+	.create-form.rent .column{
+		label{
+			display: none;
+		}
+		label.rent{
+			display: inline-block;
+		}
+	}
+}
+.title-line{
+	font-size: 20px;
+	font-weight: 500;
+	padding: 15px 0;
+	border-bottom: 1px solid $logoBg;
+	margin-bottom: 30px;
+}
+
+//=============================================================================================================
+//                                            PARTICIPANT
+//=============================================================================================================
+#nav-bar.part_nav-bar{
+	padding-top: 0;
+	@media screen and (max-width: 1035px){
+		width: 210px; 
+	}
+}
+.empty-block{
+	width: 100%;
+	background: $headerColorLight;
+	font-size: 20px;
+	text-align: center;
+	padding: 20% 0;
+	margin-bottom: 5%;
+}
+#lot-description{
+	padding: 0 2%;
+	.title-line{
+		margin-bottom: 40px;
+	}
+}
+.content-description{
+	max-width: 690px;
+	margin: 0 auto 50px auto;
+
+	.map-brief-holder{
+		height: 200px;
+		font-size: 20px;
+		text-align: center;
+		margin-bottom: 20px;
+		overflow: hidden;
+
+		.map-box{
+			width: 50%;
+			height: 100%;
+			float: left;
+			display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+			background: $headerColorLight;
+			border-right: 0.5px solid $logoBg;
+			padding: 20px 15px;
+		}
+		.brief-description{
+			width: 50%;
+			height: 100%;
+			font-size: 14px;
+			text-align: left;
+			float: right;
+			display: inline-block;
+		    overflow: hidden;
+		    background: $headerColorLight;
+			border-left: 0.5px solid $logoBg;
+			padding: 20px 15px;
+
+			h2{
+				font-size: 16px;
+				text-align: center;
+				font-weight: 700;
+				margin-bottom: 10px;
+				@media screen and (max-width: 1035px){
+					font-size: 16px;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+	.description-info{
+		background: $headerColorLight;
+		padding: 70px 20px;
+		position: relative;
+
+		.tabs-btn{
+			position: absolute;
+			top: 20px;
+			left: 50px;
+			line-height: 0;
+			font-size: 0;
+
+			button{
+				width: 116px;
+				height: 31px;
+				font-size: 14px;
+				line-height: normal;
+				color: #fff;
+				background: $logoBg;
+				border: 0;
+				text-align: center;
+				&:hover{
+					background: $hoverColor;
+				}
+			}
+			button.active{
+				background: $hoverColor;
+			}
+		}
+		.text-block{
+			display: none;
+			height: 480px;
+			font-size: 14px;
+			line-height: 18px;
+			text-align: left;
+			overflow-x: auto;
+
+			h2{
+				font-size: 20px;
+				text-align: center;
+				font-weight: 700;
+				margin-bottom: 20px;
+				@media screen and (max-width: 1035px){
+					font-size: 16px;
+					margin-bottom: 10px;
+				}
+			}
+		}
+		.text-block.active{
+			display: inline-block;
+		}
+		.participate{
+			width: 160px;
+			font-size: 14px;
+			line-height: normal;
+			color: #fff;
+			background: lighten($hoverColor, 5%);
+			text-align: center;
+			padding: 12px 0;
+			position: absolute;
+			right: 20px;
+			bottom: 20px;
+			&:hover{
+				@extend .a-hover;
+			}
+		}
+	}
+}
+#part_lot-bid{
+	padding: 0 52px;
+	.title-line{
+		margin-bottom: 0;
+	}
+	.auction-container{
+		padding: 30px 5%;
+		overflow: hidden;
+		strong{
+			display: block;
+			text-align: center;
+			font-size: 17px;
+			margin-bottom: 5px;
+		}
+		.start-price{
+			float: left;
+			.price{
+				width: 172px;
+				font-size: 24px;
+				font-weight: 500;
+				background: $headerColorLight;
+				text-align: center;
+				padding: 16px 10px 20px 10px;
+			}
+		}
+		.timer{
+			float: right;
+			#countdown-1{
+				width: 172px;
+				font-size: 20px;
+				font-weight: 500;
+				background: $headerColorLight;
+				text-align: center;
+				padding: 18px 10px;
+				margin-bottom: 10px;
+			}
+			.leave-auction{
+				display: block;
+				font-size: 16px;
+				text-align: center;
+				font-weight: 500;
+				background: $headerColorLight;
+				padding: 18px 10px;
+				&:hover{
+					@extend .a-hover;
+				}
+			}
+		}
+		.bid-block{
+			width: 686px;
+			margin: 0 auto;
+			form{
+				@extend .flexRow;
+				align-items: flex-start;
+				.bit-step{
+					width: 49.6%;
+					font-size: 15px;
+					background: $headerColorLight;
+					text-align: center;
+					padding: 15px 10px 57px 10px;
+					strong{
+						margin-bottom: 40px;
+					}
+					i{
+						margin-right: 5px;
+					}
+					input{
+						width: 50%;
+    					height: 38px;
+    					font-size: 17px;
+						border: 0;
+						text-align: center;
+						padding: 0 7px;
+						margin-bottom: 25px;
+						margin-left: 32px;
+					}
+					input::-webkit-outer-spin-button,
+					input::-webkit-inner-spin-button {
+					    display: none;
+					    -webkit-appearance: none;
+					    margin: 0;
+					}
+					.min-max{
+						font-size: 13px;
+						display: flex;
+					    justify-content: space-between;
+					    padding: 0 15px;
+						i{
+							text-decoration: underline;
+							margin-right: 5px;
+						}
+						span{
+							display: inline-block;
+						}
+						.min{
+							margin-right: 40px;
+						}
+					}
+				}
+				.prices-box{
+					width: 49.6%;
+					text-align: center;
+					.item{
+						display: inline-block;
+						background: $headerColorLight;
+						width: 162px;
+						height: 100px;
+						vertical-align: top;
+						padding: 15px 5px;
+						margin: 0 3px 10px 3px;
+						strong{
+							margin-bottom: 10px;
+						}
+						.price{
+							display: inline-block;
+							vertical-align: middle;
+							font-size: 20px;
+							font-weight: 500;
+						}
+					}
+					.send-btn{
+						font-size: 20px;
+						border: 0;
+						padding: 0;
+						&:hover{
+							@extend .a-hover;
+						}
+					}
+				}
+			}
+			.bid-history{
+				background: $headerColorLight;
+				padding: 25px 10px;
+				strong{
+					margin-bottom: 30px;
+				}
+				table{
+					font-size: 15px;
+					width: 100%;
+					margin-bottom: 10px;
+					thead{
+						font-size: 17px;
+						font-weight: 500;
+						tr th{
+							text-align: center;
+							padding: 10px;
+							padding-bottom: 15px;
+						}
+					}
+					tbody tr td{
+						width: 30%;
+						text-align: center;
+						padding: 10px;
+					}
+				}
+				.view-all{
+					text-align: center;
+					padding: 10px 0 0;
+					a{
+						display: inline-block;
+						font-size: 17px;
+						line-height: 28px;
+						font-weight: 500;
+						&:hover{
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+	.content-description .description-info .text-block{
+		height: auto;
+	}
+	@media screen and (max-width: 1575px){
+		padding: 0 30px;
+		.auction-container{
+			padding: 30px 10px;
+		}
+	}
+	@media screen and (max-width: 1435px){
+		margin-left: 200px;
+		.auction-container{
+			text-align: justify;
+			&:after{
+				content: '';
+				width: 100%;
+				display: block;
+			}
+			.start-price{
+				float: none;
+    			display: inline-block;
+    			vertical-align: top;
+    			margin-bottom: 100px;
+			}
+		}
+	}
+}
+
